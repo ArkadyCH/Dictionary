@@ -1,0 +1,21 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Слово</th>
+      <th scope="col">Перевод</th>
+      <th scope="col" colspan="2">Операции</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @words.each do |word| %>
+    <tr>
+      <th scope="row"><%= word.id %></th>
+      <td><%= word.word %></td>
+      <td><%= word.transfer %></td>
+      <td class="col col-lg-1"><a href="">Изменить <i class="fas fa-edit"></i></a></td>
+      <td class="col col-lg-2"><a href="">Удалить <i class="fas fa-minus-square"></i></a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

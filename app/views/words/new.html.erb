@@ -1,0 +1,15 @@
+<%= form_for @word do |f| %>
+  <div class="form-control">
+  	<%= f.label :word %>
+  	<%= f.text_field :word %>
+  </div>
+
+  <div class="form-control">
+  	<%= f.label :transfer %>
+  	<%= f.text_field :transfer %>
+  </div>
+
+  <div class="form-control">
+  	<%= f.submit 'Add' %>
+  </div>
+<% end %>
