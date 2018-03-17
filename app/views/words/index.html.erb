@@ -13,8 +13,8 @@
       <th scope="row"><%= word.id %></th>
       <td><%= word.word %></td>
       <td><%= word.transfer %></td>
-      <td class="col col-lg-1"><a href="">Изменить <i class="fas fa-edit"></i></a></td>
-      <td class="col col-lg-2"><a href="">Удалить <i class="fas fa-minus-square"></i></a></td>
+      <td class="col col-lg-1"><%= link_to 'Изменить' , edit_word_path(word)%></td>
+      <td class="col col-lg-2"><%= link_to 'Удалить' , word_path(word), method: :delete %></td>
     </tr>
     <% end %>
   </tbody>

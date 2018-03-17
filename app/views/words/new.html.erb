@@ -1,27 +1,2 @@
-<%= form_for @word do |f| %>
-  <div class="form-control">
-  	<%= f.label :word %>
-  	<%= f.text_field :word %>
-  </div>
-
-  <div class="form-control">
-  	<%= f.label :transfer %>
-  	<%= f.text_field :transfer %>
-  </div>
-
-  <div class="form-control">
-  	<%= f.submit 'Add' %>
-  </div>
-<% end %>
-
-<form class="add_word">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Слово</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Word">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Перевод</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Слово">
-  </div>
-  <button type="submit" class="btn btn-primary">Добавить</button>
-</form>
+<h1>Добавить</h1>
+<%= render 'form' %>

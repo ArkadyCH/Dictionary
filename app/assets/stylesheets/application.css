@@ -27,9 +27,10 @@ h1{
 
 	width: 300px;
 }
-.add_word button{
-	margin-left: 35%;
-}
 .table{
+	margin-top: 10px;
+}
+.add_word .btn-edit{
+	margin-left: 35%;
 	margin-top: 10px;
 }

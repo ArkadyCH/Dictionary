@@ -1,0 +1,6 @@
+
+<%= simple_form_for @word, html: { class: 'add_word' } do |f| %>
+  <%= f.input :word, input_html: { class: 'form-control' }%>
+  <%= f.input :transfer, input_html: { class: 'form-control' }%>
+  <%= f.submit 'Добавить', class: "btn btn-primary btn-edit" %>
+<% end %>
