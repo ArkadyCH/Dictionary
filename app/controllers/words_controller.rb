@@ -1,4 +1,6 @@
 class WordsController < ApplicationController
+	before_action :find_word, only: [:edit , :update , :destroy]
+
 	def index
 		@words = Word.all
 	end
@@ -8,14 +10,11 @@ class WordsController < ApplicationController
 	end
 
 	def edit
-		@word = Word.find(params[:id])
 	end
 
 	def update
-		@word = Word.find(params[:id])
-
 		if @word.update_attributes(word_params)
-			redirect_to"/index"
+			redirect_to "/index"
 		else
 			rende :edit
 		end
@@ -32,13 +31,17 @@ class WordsController < ApplicationController
 	end
 
 	def destroy
-		@word = Word.find(params[:id])
 		if @word.destroy
 			redirect_to words_path
 		else
 			redirect_to "/404"
 		end
 	end
+
+	def find_word
+		@word = Word.find(params[:id])
+	end
+
 	private
 	def word_params
 		params.require(:word).permit(:word , :transfer)
