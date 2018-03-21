@@ -16,7 +16,7 @@ class WordsController < ApplicationController
 		if @word.update_attributes(word_params)
 			redirect_to "/index"
 		else
-			rende :edit
+			render :edit
 		end
 	end
 
@@ -26,7 +26,7 @@ class WordsController < ApplicationController
 		if @word.save
 			redirect_to "/index"
 		else
-			rende :new
+			render :new
 		end
 	end
 
