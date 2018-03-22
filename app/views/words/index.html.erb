@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <% @words.each do |word| %>
-    <% if  %>
+    <% if current_user.id == word.user_id %>
     <tr>
       <th scope="row"><%= word.id %></th>
       <td><%= word.word %></td>
