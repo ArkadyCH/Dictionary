@@ -31,7 +31,8 @@ class WordsController < ApplicationController
 	end
 
 	def destroy
-		if @word.destroy
+		if @word.user_id_id == current_user.id
+			@word.destroy
 			redirect_to words_path
 		else
 			redirect_to "/404"
@@ -44,6 +45,7 @@ class WordsController < ApplicationController
 
 	private
 	def word_params
-		params.require(:word).permit(:word , :transfer)
+		params.require(:word).permit(:word , :transfer , :user_id)
 	end
+
 end

@@ -4,6 +4,7 @@ class CreateWords < ActiveRecord::Migration[5.1]
 
       t.string :word
       t.string :transfer
+      t.references :user_id
       t.timestamps
     end
   end
