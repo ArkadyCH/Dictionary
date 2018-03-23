@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
-	root 'words#welcome'
-	get 'index' , to: 'words#index'
+	# Это маршруты бывают 3-х типов 
+	# 1) get Означает,что представление(view => html) будет только брать данные
+	# 2) post Означает,что представление(view => html) будет только посылать в экшен контроллера данные
+	# 3) delete Означает,что представление(view => html) будет что-то удалять 
+	# Маршруты это когда пишешь в адресной строке "login" и специальный роутер переадресует вас на экшен этого пути
 
-	get 'login' , to: 'users#sign_up'
-	delete 'logout' , to: 'users#destroy'
-	post 'login' , to: 'users#login'
+	root 'words#welcome' # страница приветствия
+	get 'index' , to: 'words#index' # Это маршрут на страницу показа списка слов
+	# index => то что будет в адресной строки после localhost/ , 
+	# words => это контроллер который будет обрабатывать
+	# #index => это представление(view) на которое перенаправит контроллер
 
-	#get 'sign' , to: 'users#new'
-	#post 'sign' , to: 'users#create'
-
-	resources :words
-
-	resources :users do
-		get :sign, on: :member
-	end
+	get 'login' , to: 'users#sign_up' # экшен без представления(view) ,но он предназначен для создания сессии
+	delete 'logout' , to: 'users#destroy' # экшен без представления(view) ,но он предназначен для выхода из сессии
+	post 'login' , to: 'users#login' # экшен создающий страницу создания юзера
+	
+	resources :words # специальная команда создаёт вместо меня различные маршруты по названию контроллера Words
+	resources :users # специальная команда создаёт вместо меня различные маршруты по названию контроллера Users
+	
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

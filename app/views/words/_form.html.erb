@@ -1,7 +1,8 @@
 
-<%= simple_form_for @word, html: { class: 'add_word' } do |f| %>
-  <%= f.input :word, input_html: { class: 'form-control' }%>
-  <%= f.input :transfer, input_html: { class: 'form-control' }%>
-  <%= f.submit 'Добавить', class: "btn btn-primary btn-edit" %>
+<%= simple_form_for @word, html: { class: 'add_word' } do |f| %> <!-- создать форму для отправки данных в экземпляр @word -->
+  <%= f.input :word, input_html: { class: 'form-control' }%> <!-- поле word -->
+  <%= f.input :transfer, input_html: { class: 'form-control' }%> <!-- поле transfer -->
+  <%= f.submit 'Добавить', class: "btn btn-primary btn-edit" %> <!-- сабмит формы  -->
 <% end %>
 
+<!-- Эта хуйня генерит форму в html -->

@@ -1,8 +1,10 @@
 <h1>Регистрация</h1>
-<%= simple_form_for @user, html: { class: 'col-md-6 col-md-offset-3 well add_word' } do |f| %>
-  <%= f.input :name, input_html: { class: 'form-control' }%>
-  <%= f.input :email, input_html: { class: 'form-control' }%>
-  <%= f.input :password, input_html: { class: 'form-control' }%>
-  <%= f.input :password_confirmation, input_html: { class: 'form-control' }%>
-  <%= f.submit 'Зарегестрироваться', class: "btn btn-success btn-edit" %>
+<%= simple_form_for @user, html: { class: 'col-md-6 col-md-offset-3 well add_word' } do |f| %> <!-- создание формы для экземпляра создоного в экшене new, user контроллера  -->
+  <%= f.input :name, input_html: { class: 'form-control' }%> <!-- инпуты в html будут  -->
+  <%= f.input :email, input_html: { class: 'form-control' }%> <!-- инпуты в html будут  -->
+  <%= f.input :password, input_html: { class: 'form-control' }%> <!-- инпуты в html будут  -->
+  <%= f.input :password_confirmation, input_html: { class: 'form-control' }%>  <!-- инпуты в html будут  -->
+  <%= f.submit 'Зарегестрироваться', class: "btn btn-success btn-edit" %> <!-- сабмит в html будут  -->
 <% end %>
+<!-- Создаётся полностью рабочая форма по отправки данных в контроллер User с помощью экземпляра @user в экшене new -->
+<!-- Эта хуйня генерит форму в html -->
