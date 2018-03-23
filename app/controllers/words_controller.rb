@@ -9,9 +9,6 @@ class WordsController < ApplicationController
 		@word = Word.new
 	end
 
-	def edit
-	end
-
 	def update
 		if find_user_word.update_attributes(word_params)
 			redirect_to "/index"
@@ -22,7 +19,7 @@ class WordsController < ApplicationController
 
 	def create
 		@word = Word.new(word_params)
-
+		@word.user_id = current_user.id
 		if @word.save
 			redirect_to "/index"
 		else
