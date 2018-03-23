@@ -1,8 +1,8 @@
 class WordsController < ApplicationController
-	before_action :find_word, only: [:edit , :update , :destroy]
+	before_action :find_user_word, only: [:edit , :update , :destroy]
 
 	def index
-		@words = Word.all
+		@words = user_words
 	end
 
 	def new
@@ -13,8 +13,7 @@ class WordsController < ApplicationController
 	end
 
 	def update
-		if @word.user_id == current_user.id
-			@word.update_attributes(word_params)
+		if find_user_word.update_attributes(word_params)
 			redirect_to "/index"
 		else
 			render :edit
@@ -32,16 +31,15 @@ class WordsController < ApplicationController
 	end
 
 	def destroy
-		if @word.user_id == current_user.id
-			@word.destroy
+		if find_user_word.destroy
 			redirect_to words_path
 		else
 			redirect_to "/404"
 		end
 	end
 
-	def find_word
-		@word = Word.find(params[:id])
+	def find_user_word
+		@word = user_words.find(params[:id])
 	end
 
 	private

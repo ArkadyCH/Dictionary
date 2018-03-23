@@ -9,7 +9,6 @@
   </thead>
   <tbody>
     <% @words.each do |word| %>
-    <% if current_user.id == word.user_id %>
     <tr>
       <th scope="row"><%= word.id %></th>
       <td><%= word.word %></td>
@@ -17,7 +16,6 @@
       <td class="col col-lg-1"><%= link_to 'Изменить' , edit_word_path(word)%></td>
       <td class="col col-lg-2"><%= link_to 'Удалить' , word_path(word), method: :delete %></td>
     </tr>
-    <% end %>
     <% end %>
   </tbody>
 </table>
